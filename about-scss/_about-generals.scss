@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Space+Mono:wght@400;700&display=swap');
+
+$yellow: #fcb72b;
+$slate: #495466;
+$dark: #333a44;
+$banner: #2d354a;
+$light: #f2f5fa;
+$pale: #e6ebf5;
+$muted: #8b95a5;
+$tint: #fef3dc;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $slate;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+p {
+  color: $muted;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 180px;
+  height: 54px;
+  line-height: 50px;
+  padding: 0 28px;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: #fff;
+  background-color: $yellow;
+  border: 2px solid $yellow;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: $yellow;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  .btn {
+    min-width: 150px;
+    height: 50px;
+    line-height: 46px;
+  }
+}
+
+button {
+  font-family: inherit;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.header__link {
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 16px;
+  line-height: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.header__toggle:not(.header__toggle--open) .header__icon-close,
+.header__toggle--open .header__icon-burger {
+  display: none;
+}
+
+body {
+  padding-top: 96px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 64px;
+  }
+}

@@ -1,0 +1,282 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background-color: $banner;
+}
+
+.banner--about {
+  background-image: linear-gradient(rgba(56, 66, 90, 0.8), rgba(56, 66, 90, 0.8)), url(../img/banner__bg--about.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.banner--arrows {
+  background-image: linear-gradient(rgba(56, 66, 90, 0.8), rgba(56, 66, 90, 0.8)), url(../img/careers-locations-hero-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.banner__inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.banner__title {
+  font-size: 52px;
+  color: #fff;
+}
+
+// three round shapes on the right: two with a border and one filled
+.banner__inner::before,
+.banner__inner::after {
+  content: '';
+  position: absolute;
+  top: 70px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.banner__inner::before {
+  left: calc(100% - 53px);
+}
+
+.banner__inner::after {
+  left: calc(100% + 33px);
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: calc(100% - 32px);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+@media (max-width: 992px) {
+  .banner {
+    height: 160px;
+  }
+
+  .banner__inner::before,
+  .banner__inner::after,
+  .banner::before {
+    top: 50px;
+  }
+
+  .banner__inner::before {
+    left: calc(100% - 185px);
+  }
+
+  .banner__inner::after {
+    left: calc(100% - 99px);
+  }
+
+  .banner::before {
+    left: calc(100% - 44px);
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    height: 156px;
+  }
+
+  .banner__inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner__title {
+    font-size: 36px;
+  }
+
+  .banner__inner::before,
+  .banner__inner::after,
+  .banner::before {
+    display: none;
+  }
+}
+
+// one block with text + round photo. before = pale round shape, after = yellow arrow
+.feature {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: calc(50% + 623px);
+  width: 445px;
+  height: 445px;
+  border-radius: 50%;
+  background-color: $pale;
+}
+
+.feature::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 400px;
+  width: 733px;
+  height: 136px;
+  background-image: url(../img/feature__arrow.svg);
+  background-repeat: no-repeat;
+}
+
+// image on the left, arrow comes from the left side
+.feature--reverse::before {
+  left: auto;
+  right: calc(50% + 618px);
+}
+
+.feature--reverse::after {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.feature--low::after {
+  top: 400px;
+}
+
+.feature--low-up::after {
+  top: 379px;
+  transform: scaleY(-1);
+}
+
+.feature--high::after {
+  top: 99px;
+}
+
+.feature--mid::after {
+  top: 171px;
+}
+
+.feature__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feature__inner--reverse {
+  flex-direction: row-reverse;
+}
+
+.feature__text {
+  width: 460px;
+}
+
+.feature__title {
+  margin-bottom: 24px;
+}
+
+.feature__desc {
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+
+.feature__media {
+  position: relative;
+  z-index: 1;
+  width: 445px;
+  height: 445px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.feature__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .feature::before {
+    left: calc(50% + 289px);
+  }
+
+  .feature--reverse::before {
+    left: auto;
+    right: calc(50% + 286px);
+  }
+
+  .feature__inner,
+  .feature__inner--reverse {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .feature__text {
+    width: 100%;
+    max-width: 560px;
+    margin-top: 70px;
+  }
+
+  .feature__desc {
+    margin: 0 auto 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .feature {
+    padding: 40px 0 60px;
+  }
+
+  .feature::before {
+    display: none;
+  }
+
+  .feature::after {
+    width: 351px;
+    background-image: url(../img/feature__arrow--mobile.svg);
+  }
+
+  .feature--low::after {
+    top: 204px;
+  }
+
+  .feature--low-up::after {
+    top: 184px;
+  }
+
+  .feature--high::after,
+  .feature--mid::after {
+    top: 34px;
+  }
+
+  .feature__media {
+    width: 310px;
+    height: 310px;
+  }
+
+  .feature__text {
+    margin-top: 56px;
+  }
+
+  .feature__title {
+    margin-bottom: 16px;
+  }
+
+  .feature__desc {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+}
+
+/* Pixel-perfect refinements applied */
+
+
+@media (max-width: 992px) { .banner--arrows { background-image: linear-gradient(rgba(56,66,90,.8), rgba(56,66,90,.8)), url(../img/careers-locations-hero-tablet.jpg); } }
+@media (max-width: 600px) { .banner--arrows { background-image: linear-gradient(rgba(56,66,90,.8), rgba(56,66,90,.8)), url(../img/careers-location-hero-mobile.jpg); } }

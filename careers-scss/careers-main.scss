@@ -1,0 +1,7 @@
+@import 'careers-generals';
+@import 'careers-container';
+@import 'blocks/careers-blocks';
+
+@media (max-width: 600px) {
+  .cta { margin-top: 64px; padding-bottom: 97px; }
+}

@@ -1,0 +1,7 @@
+@import 'generals';
+@import 'container';
+@import 'blocks/blocks';
+
+@media (max-width: 600px) {
+  .cta { margin-top: 89px; padding-bottom: 97px; }
+}

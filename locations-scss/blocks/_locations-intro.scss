@@ -1,0 +1,405 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background-color: $banner;
+}
+
+.banner--about {
+  background-image: linear-gradient(rgba(56, 66, 90, 0.8), rgba(56, 66, 90, 0.8)), url(../img/banner__bg--about.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.banner--arrows {
+  background-image: linear-gradient(rgba(56, 66, 90, 0.8), rgba(56, 66, 90, 0.8)), url(../img/careers-locations-hero-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.banner__inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.banner__title {
+  font-size: 52px;
+  color: #fff;
+}
+
+.banner__inner::before,
+.banner__inner::after {
+  content: '';
+  position: absolute;
+  top: 70px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.banner__inner::before {
+  left: calc(100% - 53px);
+}
+
+.banner__inner::after {
+  left: calc(100% + 33px);
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: calc(100% - 32px);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+@media (max-width: 992px) {
+  .banner {
+    height: 160px;
+  }
+
+  .banner__inner::before,
+  .banner__inner::after,
+  .banner::before {
+    top: 50px;
+  }
+
+  .banner__inner::before {
+    left: calc(100% - 185px);
+  }
+
+  .banner__inner::after {
+    left: calc(100% - 99px);
+  }
+
+  .banner::before {
+    left: calc(100% - 44px);
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    height: 156px;
+  }
+
+  .banner__inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner__title {
+    font-size: 36px;
+  }
+
+  .banner__inner::before,
+  .banner__inner::after,
+  .banner::before {
+    display: none;
+  }
+}
+
+.map {
+  padding: 80px 0 100px;
+}
+
+.map__img {
+  width: 100%;
+  height: auto;
+}
+
+.city-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+.city-cta__title {
+  width: 330px;
+  line-height: 1;
+}
+
+.city-cta__text {
+  flex: 1;
+  max-width: 320px;
+  font-size: 15px;
+}
+
+.city-list {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .map {
+    padding: 50px 0 60px;
+  }
+
+  .city-cta {
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 40px;
+    padding-bottom: 90px;
+    text-align: center;
+  }
+
+  .city-cta__title {
+    width: auto;
+  }
+
+  .city-cta__text {
+    flex: none;
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 600px) {
+  .map {
+    padding: 30px 0 50px;
+  }
+
+  .city-list {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .city-list__item {
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: $tint;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .city-cta {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .banner {
+    height: 180px;
+  }
+
+  .banner--arrows {
+    background-image: linear-gradient(rgba(56, 66, 90, .8), rgba(56, 66, 90, .8)), url(../img/careers-locations-hero-tablet.jpg);
+  }
+
+  .banner__title {
+    margin-left: 60px;
+  }
+
+  .city-cta {
+    padding-bottom: 96px;
+  }
+
+  .city-cta__title {
+    max-width: 430px;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    height: 156px;
+  }
+
+  .banner__title {
+    margin-left: 0;
+  }
+
+  .banner--arrows {
+    background-image: linear-gradient(rgba(56, 66, 90, .8), rgba(56, 66, 90, .8)), url(../img/careers-location-hero-mobile.jpg);
+  }
+
+  .map {
+    padding: 50px 0 60px;
+  }
+
+  .map__picture {
+    display: block;
+    width: 100%;
+  }
+
+  .map__img {
+    max-width: 315px;
+    margin: 0 auto;
+  }
+
+  .city-list {
+    margin-top: 40px;
+  }
+
+  .city-list__item {
+    margin-bottom: 12px;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .city-cta {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}
+
+.map__wrap {
+  position: relative;
+}
+
+.city-list {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.city-list__item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 189px;
+  height: 70px;
+  padding: 0;
+  background: $yellow;
+  color: $slate;
+  font-family: 'Space Mono', monospace;
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
+  transform: translate(-50%, -100%);
+}
+
+.city-list__item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-top: 14px solid $yellow;
+  border-right: 14px solid transparent;
+  border-left: 14px solid transparent;
+  transform: translateX(-50%);
+}
+
+.city-list__item--new-york {
+  left: 21%;
+  top: 30%;
+}
+
+.city-list__item--london {
+  left: 44%;
+  top: 19%;
+}
+
+.city-list__item--yokohama {
+  left: 86%;
+  top: 30%;
+}
+
+.city-list__item--jakarta {
+  left: 78.75%;
+  top: 61.5%;
+}
+
+@media (max-width: 992px) {
+  .city-list__item {
+    width: 120px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .city-list__item::after {
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-left-width: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .city-list {
+    position: static;
+    margin: 40px auto 0;
+    padding: 0;
+  }
+
+  .city-list__item {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 16px;
+    padding: 22px;
+    background: $tint;
+    font-size: 20px;
+    transform: none;
+  }
+
+  .city-list__item::after {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  .map {
+    padding-top: 105px;
+  }
+
+  .city-cta {
+    padding-bottom: 71px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 601px) {
+  .map {
+    padding-top: 155px;
+  }
+
+  .city-cta {
+    padding-bottom: 126px;
+  }
+
+  .footer {
+    height: 102px;
+  }
+}
+
+@media (max-width: 600px) {
+  .map {
+    padding: 75px 0 49px;
+  }
+
+  .city-list {
+    max-width: 327px;
+    margin-top: 39px;
+  }
+
+  .city-list__item {
+    padding: 19px 22px;
+  }
+
+  .city-cta {
+    gap: 36px;
+    padding-top: 1px;
+    padding-bottom: 72px;
+  }
+
+  .city-cta__btn {
+    height: 53px;
+    line-height: 49px;
+  }
+
+  .footer {
+    padding: 98px 0 81px;
+  }
+}
